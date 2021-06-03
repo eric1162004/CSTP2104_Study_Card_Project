@@ -23,10 +23,13 @@ public:
 		return mPtr;
 	}
 
+	// Casting
 	operator T* ()
 	{
 		return mPtr;
 	}
+
 private:
 	T* mPtr{ nullptr };
+
 };

@@ -1,18 +1,17 @@
 #include "wrapper.h"
+#using <fileLib.dll>
 
-#using <logicLib.dll>
-using namespace logicLib;
+using namespace fileLib;
 
 float getRadiusManaged(int frameNum)
 {
-	Class1^ c1 = gcnew Class1();
-	return c1->getRadius(0);
-	//return 50.f;
+	File^ c1 = gcnew File();
+	return c1->getFileNum(0);
 }
 
 #pragma managed(push, off)
 
-float getRadius(int frameNum)
+float getFileNum(int frameNum)
 {
 	return getRadiusManaged(frameNum);
 }

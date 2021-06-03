@@ -6,4 +6,4 @@
 #define WRAPPER_LIB_EXPORT __declspec(dllimport)
 #endif
 
-float WRAPPER_LIB_EXPORT getRadius(int frameNum);
+float WRAPPER_LIB_EXPORT getFileNum(int frameNum);
