@@ -25,70 +25,24 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE
+1 TEXTINCLUDE 
 BEGIN
-"resource.h\0"
+    "resource.h\0"
 END
 
-2 TEXTINCLUDE
+2 TEXTINCLUDE 
 BEGIN
-"#include ""winres.h""\r\n"
-"\0"
+    "#include ""winres.h""\r\n"
+    "\0"
 END
 
-3 TEXTINCLUDE
+3 TEXTINCLUDE 
 BEGIN
-"\r\n"
-"\0"
+    "\r\n"
+    "\0"
 END
 
 #endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_FUN_DIALOG DIALOGEX 0, 0, 215, 117
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-DEFPUSHBUTTON   "OK", IDOK, 108, 102, 50, 14
-PUSHBUTTON      "Cancel", IDCANCEL, 162, 102, 50, 14
-PUSHBUTTON      "Button1", IDC_CUSTOMBUTTON, 6, 6, 198, 90
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-IDD_FUN_DIALOG, DIALOG
-BEGIN
-LEFTMARGIN, 7
-RIGHTMARGIN, 208
-TOPMARGIN, 7
-BOTTOMMARGIN, 110
-END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_FUN_DIALOG AFX_DIALOG_LAYOUT
-BEGIN
-0
-END
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
