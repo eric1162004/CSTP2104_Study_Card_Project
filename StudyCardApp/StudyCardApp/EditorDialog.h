@@ -6,18 +6,21 @@
 class EditorDialog
 {
 public:
-	static void RegisterClass();
-	static LRESULT CALLBACK
-		DialogProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
+	LRESULT OnMessage(EditorDialog&, UINT msg, WPARAM wp, LPARAM lp);
+	void OnCreate();
 
 	EditorDialog();
 	void DisplayDialog(HWND hWnd);
 
-	LRESULT OnMessage(EditorDialog&, UINT msg, WPARAM wp, LPARAM lp);
-	void OnCreate();
+	static void RegisterClass();
+	static LRESULT CALLBACK
+		DialogProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 
 private:
 	HWND m_hDlg;
-	int textInt{};
+	HWND m_hList;
+	HWND m_hOpenButton;
+	HWND m_hEditButton;
+	HWND m_hDeleteButton;
 };
 

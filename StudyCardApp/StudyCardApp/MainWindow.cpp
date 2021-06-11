@@ -2,17 +2,39 @@
 #include "Window/Window.h"
 #include "resource.h"
 
-MainWindow::MainWindow(HINSTANCE hInstance)
-	: m_window{
-		hInstance, L"MainWindow", L"Study Card Application",
-		[this](Window& w) { onCreate(w); },
-		[this](Window& w, UINT message, WPARAM wParam, LPARAM lParam)
-		{ return processMessage(w.getWindow(), message, wParam, lParam); } },
-	m_EditorDialog{},
-	m_StudyDialog{}
+LRESULT MainWindow::processMessage(
+	HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	m_window.RegisterWindowClass();
-	m_window.CreateNewWindow(100, 100, 500, 400, NULL, NULL, hInstance, this);
+	switch (message)
+	{
+	case WM_COMMAND:
+
+		switch (wParam)
+		{
+		case NEW_CARD_SET_BUTTON:
+			m_EditorDialog.DisplayDialog(hWnd);
+			break;
+
+		case OPEN_BUTTON:
+			m_StudyDialog.DisplayDialog(hWnd);
+			break;
+
+		case EDIT_BUTTON:
+			MessageBox(hWnd, L"Edit", L"Title", MB_OK);
+			break;
+
+		case DELETE_BUTTON:
+			MessageBox(hWnd, L"Delete this card set?", L"Delete Card Set", MB_YESNO | MB_ICONWARNING);
+			break;
+		}
+		break;
+
+	case WM_CLOSE:
+		::PostQuitMessage(0);
+		break;
+	}
+
+	return ::DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 void MainWindow::onCreate(Window& w)
@@ -55,38 +77,15 @@ void MainWindow::onCreate(Window& w)
 	SendMessageW(m_hLogo, STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)m_hLogoImage);
 }
 
-LRESULT MainWindow::processMessage(
-	HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+MainWindow::MainWindow(HINSTANCE hInstance)
+	: m_window{
+		hInstance, L"MainWindow", L"Study Card Application",
+		[this](Window& w) { onCreate(w); },
+		[this](Window& w, UINT message, WPARAM wParam, LPARAM lParam)
+		{ return processMessage(w.getWindow(), message, wParam, lParam); } },
+	m_EditorDialog{},
+	m_StudyDialog{}
 {
-	switch (message)
-	{
-	case WM_COMMAND:
-
-		switch (wParam)
-		{
-		case NEW_CARD_SET_BUTTON:
-			m_EditorDialog.DisplayDialog(hWnd);
-			break;
-
-		case OPEN_BUTTON:
-			m_StudyDialog.DisplayDialog(hWnd);
-			break;
-
-		case EDIT_BUTTON:
-			MessageBox(hWnd, L"Edit", L"Title", MB_OK);
-			break;
-
-		case DELETE_BUTTON:
-			MessageBox(hWnd, L"Delete this card set?", L"Delete Card Set", MB_YESNO | MB_ICONWARNING);
-			break;
-		}
-		break;
-
-	case WM_CLOSE:
-		::PostQuitMessage(0);
-		break;
-	}
-
-	return ::DefWindowProc(hWnd, message, wParam, lParam);
+	m_window.RegisterWindowClass();
+	m_window.CreateNewWindow(100, 100, 500, 400, NULL, NULL, hInstance, this);
 }
-
