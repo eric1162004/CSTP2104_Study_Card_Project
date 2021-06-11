@@ -32,8 +32,10 @@ public:
 protected:
 	HWND m_hWnd{ nullptr };
 	HINSTANCE m_hInt{};
+
 	OnCreate m_OnCreate;
 	OnMessage m_OnMessage;
+
 	const wchar_t* m_className{};
 	const wchar_t* m_windowTitle{};
 };
