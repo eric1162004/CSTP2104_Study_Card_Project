@@ -22,5 +22,7 @@ private:
 	HWND m_hOpenButton;
 	HWND m_hEditButton;
 	HWND m_hDeleteButton;
+
+
 };
 

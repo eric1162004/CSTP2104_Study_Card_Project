@@ -8,7 +8,6 @@ LRESULT MainWindow::processMessage(
 	switch (message)
 	{
 	case WM_COMMAND:
-
 		switch (wParam)
 		{
 		case NEW_CARD_SET_BUTTON:

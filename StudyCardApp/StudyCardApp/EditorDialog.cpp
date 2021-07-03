@@ -1,12 +1,27 @@
 #include "EditorDialog.h"
 
+typedef struct
+{
+	TCHAR keyword[MAX_PATH];
+	TCHAR definition[MAX_PATH];
+} Item;
+
+Item Items[] =
+{
+	{TEXT("Haas, Jonathan"), TEXT("Midfield")},
+	{TEXT("Pai, Jyothi"), TEXT("Forward") },
+	{TEXT("Hanif, Kerim"), TEXT("Back") },
+	{TEXT("Anderberg, Michael"), TEXT("Back")},
+	{TEXT("Jelitto, Jacek"), TEXT("Midfield")},
+};
+
 LRESULT EditorDialog::OnMessage(
 	EditorDialog& editorDialog, UINT msg, WPARAM wp, LPARAM lp)
 {
 	switch (msg)
 	{
 	case WM_COMMAND:
-		switch (wp)
+		switch (LOWORD(wp))
 		{
 		case ADD_ITEM_BUTTON:
 			MessageBox(m_hDlg, L"ADD_ITEM_BUTTON", L"Message", MB_OK);
@@ -17,6 +32,17 @@ LRESULT EditorDialog::OnMessage(
 		case SAVE_EXIT_BUTTON:
 			MessageBox(m_hDlg, L"SAVE_EXIT_BUTTON", L"Message", MB_OK);
 			break;
+		case EDITOR_LISTBOX:
+		{
+			switch (HIWORD(wp))
+			{
+			case LBN_SELCHANGE:
+				int lbItem = (int)SendMessage(m_hList, LB_GETCURSEL, 0, 0);
+				int i = (int)SendMessage(m_hList, LB_GETITEMDATA, lbItem, 0);
+				MessageBox(NULL, Items[i].keyword, Items[i].definition, MB_OK);
+				break;
+			}
+		}
 		}
 		break;
 	case WM_CLOSE:
@@ -31,11 +57,17 @@ LRESULT EditorDialog::OnMessage(
 void EditorDialog::OnCreate()
 {
 	m_hList = CreateWindowW(L"listbox", L"List box",
-		WS_VISIBLE | WS_CHILD | WS_BORDER,
+		WS_VISIBLE | WS_CHILD | WS_BORDER | LBS_STANDARD | LBS_NOTIFY,
 		90, 90, 160, 200, m_hDlg, (HMENU)EDITOR_LISTBOX, NULL, NULL);
 
-	SendMessageW(m_hList, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>(L"Hello"));
-	SendMessageW(m_hList, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>(L"Hello2"));
+	for (int i = 0; i < ARRAYSIZE(Items); i++)
+	{
+		int pos = (int)SendMessage(m_hList, LB_ADDSTRING, 0,
+			(LPARAM)Items[i].keyword);
+		SendMessage(m_hList, LB_SETITEMDATA, pos, (LPARAM)i);
+	}
+	// Set input focus to the list box.
+	SetFocus(m_hList);
 
 	CreateWindowW(L"static", L"Edit Your Card Set",
 		WS_VISIBLE | WS_CHILD,
