@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="File.cs" />
+  </ItemGroup>
+
+</Project>

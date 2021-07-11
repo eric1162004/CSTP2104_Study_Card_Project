@@ -12,6 +12,11 @@ public:
 private:
 	void onCreate(Window&);
 
+	void CreateNewFile();
+	void ClearListBox();
+	void RefreshListBox();
+	void RemoveFileFromList(int index);
+
 	LRESULT  processMessage(
 		HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
@@ -21,5 +26,13 @@ private:
 
 	HBITMAP m_hLogoImage;
 	HWND m_hLogo;
+	HWND m_hNewFileName;
+	HWND m_hList;
+
+	std::vector<std::wstring> m_files = {};
+	int m_currentFileIndex{};
+
+	std::wstring m_selectedFile;
+	std::wstring m_newFileName;
 };
 

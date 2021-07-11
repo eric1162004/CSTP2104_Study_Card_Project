@@ -1,0 +1,3 @@
+g:go
+h:hat
+i:ice-cream

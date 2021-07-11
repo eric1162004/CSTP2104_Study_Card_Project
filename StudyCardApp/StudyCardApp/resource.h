@@ -15,6 +15,7 @@
 #define SHOW_BUTTON                     109
 #define NEXT_BUTTON                     110
 #define EDITOR_LISTBOX                  111
+#define MAIN_LISTBOX                  112
 
 // Next default values for new objects
 // 

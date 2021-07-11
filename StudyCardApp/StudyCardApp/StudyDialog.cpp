@@ -12,10 +12,10 @@ LRESULT StudyDialog::OnMessage(
 			MessageBox(m_hDlg, L"REMOVE_FROM_LOOP_BUTTON", L"Message", MB_OK);
 			break;
 		case SHOW_BUTTON:
-			MessageBox(m_hDlg, L"SHOW_BUTTON", L"Message", MB_OK);
+			ShowDefinition();
 			break;
 		case NEXT_BUTTON:
-			MessageBox(m_hDlg, L"NEXT_BUTTON", L"Message", MB_OK);
+			ShowNextWord();
 			break;
 		}
 		break;
@@ -30,31 +30,59 @@ LRESULT StudyDialog::OnMessage(
 
 void StudyDialog::OnCreate()
 {
-	CreateWindowW(L"static", L"Apple",
+	RefreshListBox();
+
+	m_hKeyword = CreateWindowW(L"static", m_keyword.c_str(),
 		WS_VISIBLE | WS_CHILD,
 		80, 60, 350, 30, m_hDlg, NULL, NULL, NULL, NULL);
 
-	CreateWindowW(L"static", L"The round fruit of a tree of the rose family",
+	m_hDefinition = CreateWindowW(L"static", m_definition.c_str(),
 		WS_VISIBLE | WS_CHILD | WS_HSCROLL | WS_VSCROLL | WS_BORDER,
 		80, 100, 350, 120, m_hDlg, NULL, NULL, NULL, NULL);
 
-	m_hOpenButton = CreateWindowW(
-		L"button", L"Remove item",
-		WS_VISIBLE | WS_CHILD,
-		80, 240, 110, 40,
-		m_hDlg, (HMENU)REMOVE_FROM_LOOP_BUTTON, NULL, NULL, NULL);
-
-	m_hEditButton = CreateWindowW(
+	CreateWindowW(
 		L"button", L"Show Definition",
 		WS_VISIBLE | WS_CHILD,
-		200, 240, 110, 40,
+		80, 240, 110, 40,
 		m_hDlg, (HMENU)SHOW_BUTTON, NULL, NULL, NULL);
 
-	m_hDeleteButton = CreateWindowW(
+	CreateWindowW(
 		L"button", L"Next Item",
 		WS_VISIBLE | WS_CHILD,
 		320, 240, 110, 40,
 		m_hDlg, (HMENU)NEXT_BUTTON, NULL, NULL, NULL);
+}
+
+void StudyDialog::ShowDefinition()
+{
+	if (m_items.size() == 0) return;
+
+	m_definition = m_items[m_currentItemIndex].definition;
+	SetWindowText(m_hDefinition, m_definition.c_str());
+}
+
+void StudyDialog::ShowNextWord()
+{
+	if (m_items.size() == 0) return;
+
+	m_currentItemIndex = ++m_currentItemIndex % m_items.size();
+	m_keyword = m_items[m_currentItemIndex].keyword;
+	m_definition = L"";
+
+	SetWindowText(m_hKeyword, m_keyword.c_str());
+	SetWindowText(m_hDefinition, m_definition.c_str());
+}
+
+void StudyDialog::RefreshListBox()
+{
+	m_items.clear();
+
+	FileManager::GetAndParseItemsFromCardFile(
+		FileManager::WideString2String(m_fileName), m_items);
+
+	m_keyword = (m_items.size() == 0) ? L"" :
+		m_items[m_currentItemIndex].keyword;
+	m_definition = L"";
 }
 
 LRESULT CALLBACK StudyDialog::DialogProcedure(
@@ -85,6 +113,12 @@ LRESULT CALLBACK StudyDialog::DialogProcedure(
 		return ::DefWindowProc(hDlg, msg, wp, lp);
 	}
 }
+
+void StudyDialog::SetFileName(std::wstring fileName)
+{
+	m_fileName = fileName;
+};
+
 
 StudyDialog::StudyDialog()
 {
@@ -117,7 +151,7 @@ void StudyDialog::RegisterClass()
 void StudyDialog::DisplayDialog(HWND hWnd)
 {
 	m_hDlg = CreateWindowEx(
-		0, L"StudyDialog", L"My ABC Card Set",
+		0, L"StudyDialog", m_fileName.c_str(),
 		WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 		200, 100, 500, 400, NULL, NULL, NULL, this);
 }
