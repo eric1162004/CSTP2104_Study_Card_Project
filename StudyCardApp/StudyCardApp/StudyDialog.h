@@ -5,7 +5,12 @@
 #include <assert.h>
 #include <fileManager.h>
 
+#include <thread>
+#include <mutex>
+#include <Window/threadPool.h>
+
 class StudyDialog
+
 {
 public:
 	LRESULT OnMessage(StudyDialog&, UINT msg, WPARAM wp, LPARAM lp);
@@ -34,5 +39,7 @@ private:
 
 	std::wstring m_keyword{};
 	std::wstring m_definition{};
+
+	ThreadPool<2> mThreadPool{};
 };
 

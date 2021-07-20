@@ -24,14 +24,11 @@
   - Users can exit the loop at any time
 
 #### Complexity Considerations:
-- Use separate threads to create child windows
-  - this will allow users to create **multiple study windows**
+- Use separate threads 
 - Filesystem & Interoperability 
   - Use C# DLL to storing and retrieving data
 - Use resources to load app icon
 - Use registry 
-  - to store cardSetID, nameOfCardSet, lastAccessDateTime, creationDateTime?
-- Download card sets over network using http (maybe?)
 
 #### Tasks
 - Set up Project

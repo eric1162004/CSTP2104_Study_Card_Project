@@ -12,7 +12,9 @@ LRESULT StudyDialog::OnMessage(
 			MessageBox(m_hDlg, L"REMOVE_FROM_LOOP_BUTTON", L"Message", MB_OK);
 			break;
 		case SHOW_BUTTON:
-			ShowDefinition();
+			mThreadPool.post([this]() {
+				ShowDefinition();
+				});
 			break;
 		case NEXT_BUTTON:
 			ShowNextWord();
