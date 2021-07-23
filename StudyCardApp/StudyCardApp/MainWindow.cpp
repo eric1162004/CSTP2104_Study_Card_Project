@@ -52,7 +52,6 @@ LRESULT MainWindow::processMessage(
 		}
 		}
 		break;
-
 	case WM_CLOSE:
 		::PostQuitMessage(0);
 		break;

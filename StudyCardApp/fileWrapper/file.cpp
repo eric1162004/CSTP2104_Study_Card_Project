@@ -7,10 +7,9 @@ using namespace fileLib;
 float getRadiusManaged(int frameNum)
 {
 	FileManager^ c1 = gcnew FileManager;
-	// return c1->getRadius(0);
-	return 5.0f;
+	return c1->getRadius(0);
+	// return 5.0f;
 }
-
 
 #pragma managed(push, off)
 

@@ -84,6 +84,7 @@ void StudyDialog::RefreshListBox()
 
 	m_keyword = (m_items.size() == 0) ? L"" :
 		m_items[m_currentItemIndex].keyword;
+
 	m_definition = L"";
 }
 

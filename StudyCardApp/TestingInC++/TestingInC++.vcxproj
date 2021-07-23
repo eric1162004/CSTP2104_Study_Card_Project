@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NOMINMAX;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\FileManagerLib;C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>
       </CompileAsManaged>
@@ -112,7 +112,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NOMINMAX;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\FileManagerLib;C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>
       </CompileAsManaged>
@@ -131,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NOMINMAX;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\FileManagerLib;C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>
       </CompileAsManaged>
@@ -150,7 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NOMINMAX;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\FileManagerLib;C:\Users\eric1\OneDrive - Vancouver Community College\Spring 2021\2104 Windows Interactive App\StudyCardAppProject\StudyCardApp\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\fileWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>
       </CompileAsManaged>

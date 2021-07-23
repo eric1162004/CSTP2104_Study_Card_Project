@@ -9,8 +9,8 @@ namespace TestingFile
         static void Main(string[] args)
         {
             FileManager fm = new FileManager();
-            float f = fm.getRadius(0);
-            Console.WriteLine(f);
+            //  float f = fm.getRadius(0);
+            // Console.WriteLine(f);
 
             /*            List<string> files = fm.GetListsOfFiles();
 

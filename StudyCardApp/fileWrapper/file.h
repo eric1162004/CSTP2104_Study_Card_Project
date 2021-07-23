@@ -7,3 +7,5 @@
 #endif
 
 WRAPPER_LIB_EXPORT float getRadius(int frameNum);
+
+// WRAPPER_LIB_EXPORT float getRadiusManaged(int frameNum);

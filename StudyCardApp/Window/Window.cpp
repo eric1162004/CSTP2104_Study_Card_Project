@@ -76,7 +76,7 @@ void Window::CreateNewWindow(
 	// Create the window
 	m_hWnd = CreateWindowEx(
 		0, m_className, m_windowTitle,
-		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+		WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME | WS_VISIBLE,
 		x, y, width, height,
 		hwndParent, hMenu, hInstance, lparam);
 }
