@@ -96,11 +96,11 @@
       <PreprocessorDefinitions>COMPILE_DLL;WIN32;_DEBUG;FILEWRAPPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalUsingDirectories>$(SolutionDir)\Debug\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)\$(Configuration)\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <UseStandardPreprocessor>
       </UseStandardPreprocessor>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\Debug\net5.0;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\$(Configuration)\net5.0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -117,11 +117,11 @@
       <PreprocessorDefinitions>COMPILE_DLL;WIN32;NDEBUG;FILEWRAPPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalUsingDirectories>$(SolutionDir)\Debug\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)\$(Configuration)\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <UseStandardPreprocessor>
       </UseStandardPreprocessor>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\Debug\net5.0;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\$(Configuration)\net5.0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,11 +138,11 @@
       <PreprocessorDefinitions>COMPILE_DLL;_DEBUG;FILEWRAPPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalUsingDirectories>$(SolutionDir)\Debug\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)\$(Configuration)\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <UseStandardPreprocessor>
       </UseStandardPreprocessor>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\Debug\net5.0;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\$(Configuration)\net5.0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -159,11 +159,11 @@
       <PreprocessorDefinitions>COMPILE_DLL;NDEBUG;FILEWRAPPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalUsingDirectories>$(SolutionDir)\Debug\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)\$(Configuration)\net5.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <UseStandardPreprocessor>
       </UseStandardPreprocessor>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\Debug\net5.0;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\$(Configuration)\net5.0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -178,6 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="file.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fileLib\fileLib.csproj">
+      <Project>{bf466a6b-8bc8-4ab7-8bf6-69bf9f4fdb04}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
