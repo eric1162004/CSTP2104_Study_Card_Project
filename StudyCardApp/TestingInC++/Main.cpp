@@ -1,7 +1,8 @@
 #include <iostream>
 #include <file.h>
+#include <constant.h>
 
 int main()
 {
-	std::cout << getRadius(1) << std::endl;
+	std::cout << getRadiuss() << std::endl;
 }

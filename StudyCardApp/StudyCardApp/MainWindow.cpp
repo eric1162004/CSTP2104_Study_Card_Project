@@ -2,6 +2,8 @@
 #include "MainWindow.h"
 #include "resource.h"
 #include <fileManager.h>
+#include <file.h>
+#include <constant.h>
 
 LRESULT MainWindow::processMessage(
 	HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -242,5 +244,5 @@ MainWindow::MainWindow(HINSTANCE hInstance)
 	m_StudyDialog{}
 {
 	m_window.RegisterWindowClass();
-	m_window.CreateNewWindow(100, 100, 500, 400, NULL, NULL, hInstance, this);
+	m_window.CreateNewWindow(100, 100, getConstantWinWidth(), getConstantWinHeight(), NULL, NULL, hInstance, this);
 }

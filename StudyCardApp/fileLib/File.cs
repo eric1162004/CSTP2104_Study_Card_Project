@@ -5,9 +5,9 @@ namespace fileLib
 {
     public class FileManager
     {
-        public static float getRadius(int frameNum)
+        public static int getWindowWidth()
         {
-            return 40.0f;
+            return 500;
         }
     }
 }

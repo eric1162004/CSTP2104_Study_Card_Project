@@ -6,5 +6,5 @@
 #define WRAPPER_LIB_EXPORT __declspec(dllimport)
 #endif
 
-WRAPPER_LIB_EXPORT int getWindowWidth();
-
+WRAPPER_LIB_EXPORT int getConstantWinWidth();
+WRAPPER_LIB_EXPORT int getConstantWinHeight();

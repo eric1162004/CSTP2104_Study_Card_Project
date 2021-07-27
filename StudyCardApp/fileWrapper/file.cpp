@@ -4,17 +4,17 @@
 
 using namespace fileLib;
 
-float getRadiusManaged(int frameNum)
+int getWindowWidthManaged()
 {
 	FileManager^ c1 = gcnew FileManager;
-	return c1->getRadius(0);
+	return c1->getWindowWidth();
 }
 
 #pragma managed(push, off)
 
-float getRadius(int frameNum)
+int getWindowWidth()
 {
-	return getRadiusManaged(frameNum);
+	return getWindowWidthManaged();
 }
 
 #pragma managed(pop)
