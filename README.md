@@ -1,3 +1,3 @@
 # CSTP2104-Study Card App Project
 
-Rebuild all projects in the project solution in order to run the application.
+Rebuild all projects in the StudyCardApp project solution in order to run the application.
