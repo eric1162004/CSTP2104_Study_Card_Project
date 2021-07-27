@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "constantLib", "constantLib\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "constantWrapper", "constantWrapper\constantWrapper.vcxproj", "{404413AC-ACC9-43ED-8EF8-4BC56384F95D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testing", "testing\TestingInC++.vcxproj", "{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,16 @@ Global
 		{404413AC-ACC9-43ED-8EF8-4BC56384F95D}.Release|x64.Build.0 = Release|x64
 		{404413AC-ACC9-43ED-8EF8-4BC56384F95D}.Release|x86.ActiveCfg = Release|Win32
 		{404413AC-ACC9-43ED-8EF8-4BC56384F95D}.Release|x86.Build.0 = Release|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Debug|x64.ActiveCfg = Debug|x64
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Debug|x64.Build.0 = Debug|x64
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Debug|x86.Build.0 = Debug|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Release|Any CPU.ActiveCfg = Release|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Release|x64.ActiveCfg = Release|x64
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Release|x64.Build.0 = Release|x64
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Release|x86.ActiveCfg = Release|Win32
+		{DE90CE01-3016-45AC-86CC-60D0AE1D0FF4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
